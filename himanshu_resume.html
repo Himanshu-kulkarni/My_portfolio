@@ -391,6 +391,74 @@
     .project-card{padding:24px 22px;}
     .lead-card{grid-template-columns:1fr;gap:10px;}
   }
+
+  /* ─── CURRENTLY BUILDING ─── */
+  .currently-building{
+    display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+    margin-bottom:20px;padding:12px 16px;
+    background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.12);
+    border-radius:8px;
+  }
+  .cb-dot{
+    width:8px;height:8px;border-radius:50%;background:var(--cyan);flex-shrink:0;
+    box-shadow:var(--glow);animation:pulsate 1.4s ease-in-out infinite;
+  }
+  .cb-label{font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;}
+  .cb-val{font-size:.9rem;color:#8aacc8;}
+
+  /* ─── WIP PROJECT CARD ─── */
+  .project-wip{border-color:rgba(0,245,255,.18)!important;position:relative;}
+  .wip-badge{
+    display:inline-block;margin-bottom:14px;
+    padding:4px 12px;border-radius:20px;
+    font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.2em;
+    color:var(--dark);background:var(--cyan);
+    animation:wipPulse 2s ease-in-out infinite;
+  }
+  @keyframes wipPulse{0%,100%{box-shadow:0 0 0 0 rgba(0,245,255,.4);}50%{box-shadow:0 0 0 6px rgba(0,245,255,0);}}
+
+  /* ─── CP LINKS ─── */
+  .cp-link{color:var(--cyan);text-decoration:none;transition:opacity .2s;}
+  .cp-link:hover{opacity:.7;}
+
+  /* ─── GITHUB STATS ─── */
+  .github-stats-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;
+  }
+  .gh-stat-card{
+    border:1px solid rgba(0,245,255,.1);border-radius:12px;overflow:hidden;
+    background:rgba(6,13,31,.8);
+    transition:border-color .3s, transform .3s;
+    display:flex;align-items:center;justify-content:center;padding:8px;
+  }
+  .gh-stat-card:hover{border-color:rgba(0,245,255,.3);transform:translateY(-3px);}
+  .gh-stat-card img{width:100%;height:auto;border-radius:8px;display:block;}
+  .gh-streak{grid-column:1/-1;}
+
+  /* ─── MINDSET ─── */
+  .mindset-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;
+    margin-bottom:40px;
+  }
+  .mindset-card{
+    border:1px solid rgba(0,102,255,.15);border-radius:10px;
+    padding:22px 28px;background:rgba(6,13,31,.7);
+    transition:border-color .3s, transform .3s;
+  }
+  .mindset-card:hover{border-color:rgba(0,102,255,.4);transform:translateY(-3px);}
+  .mindset-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .mindset-a{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:600;color:#fff;}
+  .mindset-op{font-family:'Share Tech Mono',monospace;font-size:1.2rem;color:var(--cyan);font-weight:700;}
+  .mindset-b{font-size:.95rem;color:var(--dim);}
+  .mindset-quote{
+    text-align:center;
+    font-family:'Rajdhani',sans-serif;font-size:1.25rem;font-style:italic;
+    color:#5a7a9a;padding:28px 40px;
+    border:1px solid rgba(123,47,255,.12);border-radius:12px;
+    background:rgba(123,47,255,.04);
+    line-height:1.7;
+  }
+  .quote-mark{font-family:'Orbitron',sans-serif;font-size:2rem;color:var(--purple);vertical-align:-.3em;margin:0 6px;}
 </style>
 </head>
 <body>
@@ -441,6 +509,8 @@
     <a href="#projects">Projects</a>
     <a href="#hackathons">Hackathons</a>
     <a href="#leadership">Leadership</a>
+    <a href="#github">GitHub</a>
+    <a href="#mindset">Mindset</a>
   </div>
 </nav>
 
@@ -468,6 +538,10 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
       GitHub
     </a>
+    <a href="https://leetcode.com/u/Himanshu_2407/" target="_blank" class="contact-pill">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H19.7a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+      LeetCode
+    </a>
   </div>
   <div class="scroll-hint">
     <span>Scroll to explore</span>
@@ -479,7 +553,12 @@
 <section id="objective" class="section">
   <div class="container">
     <div class="objective-box reveal">
-      <p>First-year B.Tech CSE student at <strong>DY Patil University</strong> with hands-on experience in <strong>full stack development</strong>, <strong>machine learning</strong>, and <strong>systems programming</strong>. Passionate about building reliable, impactful software — from AI-driven tools to secure exam environments. Seeking a software engineering internship where I can apply my skills in <strong>Python, FastAPI, and React</strong> to solve real-world problems and grow within a product-driven team.</p>
+      <div class="currently-building">
+        <span class="cb-dot"></span>
+        <span class="cb-label">Currently Building:</span>
+        <span class="cb-val">Chess Platform — full backend-driven chess engine with move validation &amp; real-time gameplay</span>
+      </div>
+      <p>Second-year B.Tech CSE student at <strong>DY Patil University</strong> with hands-on experience in <strong>full stack development</strong>, <strong>machine learning</strong>, and <strong>systems programming</strong>. Passionate about building reliable, impactful software — from AI-driven tools to secure exam environments. Seeking a software engineering internship where I can apply my skills in <strong>Python, FastAPI, and React</strong> to solve real-world problems and grow within a product-driven team.</p>
     </div>
   </div>
 </section>
@@ -529,6 +608,12 @@
           <span class="skill-tag">Competitive Programming</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Full Stack Dev</span>
         </div>
       </div>
+      <div class="skill-card">
+        <div class="skill-label">ML &amp; Data</div>
+        <div class="skill-val">
+          <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">PyQt5</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -542,6 +627,22 @@
       <div class="sec-line"></div>
     </div>
     <div class="projects-list stagger">
+
+      <div class="project-card project-wip">
+        <div class="wip-badge">⚡ IN PROGRESS</div>
+        <div class="proj-top">
+          <div class="proj-name">♟ Chess Platform</div>
+          <div class="proj-meta">
+            <span class="proj-tech">FastAPI</span><span class="proj-tech">Python</span>
+            <span class="proj-year">Active</span>
+          </div>
+        </div>
+        <ul class="proj-bullets">
+          <li>Backend-driven chess system with <strong>full move validation</strong>, game logic, and modular architecture — designed for scalability and real-time gameplay.</li>
+          <li>Modular FastAPI architecture with complete game-state management and multiplayer design foundations.</li>
+          <li>Deep-diving into DSA with C++ and scalable backend design as part of this build.</li>
+        </ul>
+      </div>
 
       <div class="project-card">
         <div class="proj-top">
@@ -592,6 +693,32 @@
         </ul>
       </div>
 
+      <div class="project-card">
+        <div class="proj-top">
+          <div class="proj-name">3D Code Dependency Visualizer</div>
+          <div class="proj-meta">
+            <span class="proj-year">TechVortex 3.0 · 2026</span>
+          </div>
+        </div>
+        <ul class="proj-bullets">
+          <li>Built an interactive 3D visualization of module and function relationships within a codebase to improve code understanding and debugging workflows.</li>
+          <li>Represented relationship graphs between code modules in a competitive hackathon setting and presented to judges.</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-top">
+          <div class="proj-name">AI Deepfake Detection System</div>
+          <div class="proj-meta">
+            <span class="proj-year">HackVerse 24h · 2026</span>
+          </div>
+        </div>
+        <ul class="proj-bullets">
+          <li>ML-powered system for detecting manipulated video, audio, and image content using deep learning techniques.</li>
+          <li>Multi-modal detection across video, audio &amp; image pipelines — prototype designed, built, and presented within 24 hours.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
@@ -624,6 +751,16 @@
         <div class="hack-name">La Trobe University Hackathon</div>
         <div class="hack-year">2026 · ONLINE HACKATHON</div>
         <div class="hack-desc">Developed a real-time <strong style="color:#d0baff">Smart Air Pollution Monitoring</strong> system with AI-based recommendations to help users make informed health and lifestyle decisions.</div>
+      </div>
+      <div class="hack-card">
+        <div class="hack-name">Helix HackCarnival</div>
+        <div class="hack-year">2026 · ORGANIZER · Powered by Clear Route</div>
+        <div class="hack-desc">Managed end-to-end execution of a 12-hour hackathon — venue logistics, <strong style="color:#d0baff">50+ participant registrations</strong>, problem statement curation, speaker outreach, and live issue resolution.</div>
+      </div>
+      <div class="hack-card">
+        <div class="hack-name">ODOO Hackathon</div>
+        <div class="hack-year">2026 · PARTICIPANT</div>
+        <div class="hack-desc">Built an <strong style="color:#d0baff">Appointment Booking Application</strong> leveraging the ODOO platform, focusing on scalable scheduling and user management flows.</div>
       </div>
     </div>
   </div>
@@ -712,12 +849,63 @@
       </div>
       <div class="ach-card">
         <div class="ach-icon">💻</div>
-        <div class="ach-text"><strong>Competitive Programming</strong>LeetCode · Codeforces · HackerRank</div>
+        <div class="ach-text"><strong>Competitive Programming</strong>
+          <a href="https://leetcode.com/u/Himanshu_2407/" target="_blank" class="cp-link">LeetCode</a> ·
+          <a href="https://codeforces.com/profile/kulhimanshu2407" target="_blank" class="cp-link">Codeforces</a> ·
+          <a href="https://www.hackerrank.com/profile/kulhimanshu2407" target="_blank" class="cp-link">HackerRank</a>
+        </div>
       </div>
       <div class="ach-card">
         <div class="ach-icon">🔓</div>
         <div class="ach-text"><strong>Open Source Exploration</strong>Reading &amp; contributing to beginner-friendly repositories</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GITHUB STATS -->
+<section id="github" class="section" style="padding:100px 0;">
+  <div class="container">
+    <div class="sec-header reveal-left">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">GitHub Stats</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="github-stats-grid reveal">
+      <div class="gh-stat-card">
+        <img src="https://github-readme-stats.vercel.app/api?username=Himanshu-kulkarni&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=060d1f&title_color=00f5ff&text_color=8aacc8&icon_color=0066ff" alt="GitHub Stats" loading="lazy"/>
+      </div>
+      <div class="gh-stat-card">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Himanshu-kulkarni&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=060d1f&title_color=00f5ff&text_color=8aacc8" alt="Top Languages" loading="lazy"/>
+      </div>
+      <div class="gh-stat-card gh-streak">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=Himanshu-kulkarni&theme=tokyonight&hide_border=true&background=060d1f&ring=00f5ff&fire=0066ff&currStreakLabel=00f5ff" alt="GitHub Streak" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINDSET -->
+<section id="mindset" class="section" style="padding:80px 0 100px;">
+  <div class="container">
+    <div class="sec-header reveal-left">
+      <span class="sec-num">07</span>
+      <h2 class="sec-title">Mindset</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="mindset-grid stagger">
+      <div class="mindset-card">
+        <div class="mindset-row"><span class="mindset-a">Building systems</span><span class="mindset-op">&gt;</span><span class="mindset-b">watching tutorials</span></div>
+      </div>
+      <div class="mindset-card">
+        <div class="mindset-row"><span class="mindset-a">Consistency</span><span class="mindset-op">&gt;</span><span class="mindset-b">motivation</span></div>
+      </div>
+      <div class="mindset-card">
+        <div class="mindset-row"><span class="mindset-a">Shipping</span><span class="mindset-op">&gt;</span><span class="mindset-b">perfecting</span></div>
+      </div>
+    </div>
+    <div class="mindset-quote reveal">
+      <span class="quote-mark">"</span>The best way to learn engineering is to engineer things.<span class="quote-mark">"</span>
     </div>
   </div>
 </section>
